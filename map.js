@@ -11,8 +11,7 @@ function runMap() {
 		
 		var bingGeocoder = new L.Control.BingGeocoder('Your-API-Key'); //Sign up here: http://www.bingmapsportal.com/
 		
-		var hash = new L.Hash();
-
+		
 		var marker = L.marker();
 
 				function onMapClick(e) {
@@ -30,8 +29,6 @@ function runMap() {
 
 		map.addControl(fullScreen);
 		map.addControl(bingGeocoder);
-		hash.init(map);
-
 		}
 
 window.onload = runMap;   
