@@ -1,7 +1,7 @@
 <?php
 // Install the library via PEAR or download the .zip file to your project folder.
 // This line loads the library
-require('lib/Twilio.php');
+require('Twilio.php');
 
 $sid = "AP887a2cf0f5abf1b60d40300046ac92b6"; // Your Account SID from www.twilio.com/user/account
 $token = "62fb34555619d9d44808af7de65e809b"; // Your Auth Token from www.twilio.com/user/account
