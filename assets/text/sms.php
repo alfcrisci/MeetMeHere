@@ -8,7 +8,7 @@ $token = "62fb34555619d9d44808af7de65e809b"; // Your Auth Token from www.twilio.
 
 $client = new Services_Twilio($sid, $token);
 $message = $client->account->sms_messages->create(
-  '(847) 562-5931', // From a valid Twilio number
+  '8475625931', // From a valid Twilio number
   '8477363951', // Text this number
   "Hello monkey!"
 );
