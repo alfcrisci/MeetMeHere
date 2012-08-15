@@ -33,6 +33,7 @@
     $from = $_POST["from"];
     $notes = $_POST["notes"];    
     $location = $_POST["location"];
+    $url = $_POST["url"];
 
  
     // Step 5: Loop over all our friends. $number is a phone number above, and 
@@ -53,7 +54,7 @@
         );
  
         // Display a confirmation message on the screen
-        
+       header("Location: http://visuallybs.com/maps/meet/$url"); 
     }
 
     ?>

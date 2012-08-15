@@ -160,6 +160,13 @@ body {
 				ul li:nth-child(4) {  
 				  display: none !important;
 				}
+				#url{
+					display: none;
+				}
+
+				ul li:nth-child(5) {  
+				  display: none !important;
+				}
 
 				.geolocation {
         position: absolute;
