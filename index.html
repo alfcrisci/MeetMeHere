@@ -13,24 +13,49 @@
 
 	<script src="assets/map/leaflet/leaflet.js"></script>
 	
-	<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 	
 	<script src="assets/map/Control.FullScreen.js"></script>
 	<script src="assets/map/geocoder/Control.BingGeocoder.js"></script>
 	<script src="assets/map/leaflet-hash.js"></script>
 	<? include "assets/text/sms.php";?>
-
-
 	<script src="map.js"></script>
-  
-  <style>
-   
-  </style>
-
 </head>
 <body>
-
+	
 	<div id="map"></div>
+		
+<script type="text/javascript">
+$('#submit').click(function () {	
+	//start the ajax
+		$.ajax({
+			//this is the php file that processes the data and send mail
+			url: "assets/text/sms.php",	
+			
+			//GET method is used
+			type: "GET",
+
+			//pass the data			
+			data: data,		
+			
+			//Do not cache the page
+			cache: false,
+			
+			//success
+			success: function (html) {				
+				//if process.php returned 1/true (send mail success)
+				if (html==1) {					
+
+					
+				//if process.php returned 0/false (send mail failed)
+				} else alert('Sorry, unexpected error. Please try again later.');				
+			}		
+		});
+		
+		//cancel the submit button default behaviours
+		return false;
+	
+	</script>
 
 </body>
 </html>

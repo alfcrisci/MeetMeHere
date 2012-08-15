@@ -1,34 +1,32 @@
+
+
 function runMap() {
+
 
 	var map = L.map('map').setView([12, -29], 3);
 
 		L.tileLayer('http://{s}.tiles.mapbox.com/v3/mapbox.mapbox-streets/{z}/{x}/{y}.png', {
-			maxZoom: 18,
-			attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>'
+			maxZoom: 17,
 		}).addTo(map);
-
-		var fullScreen = new L.Control.FullScreen(); 
 		
-		var bingGeocoder = new L.Control.BingGeocoder('Your-API-Key'); //Sign up here: http://www.bingmapsportal.com/
+		var bingGeocoder = new L.Control.BingGeocoder('AmFJ03ozVugKu0Y_uijzwvFEKfKY5VCesm1eiBqGhchxQ3uKFUQMYsKJLNdfHsIR'); 
 		
 		
 		var marker = L.marker();
 
 				function onMapClick(e) {
 
+					var latlngStr = + e.latlng.lat.toFixed(3) + ',' + e.latlng.lng.toFixed(3);
+
 					marker
 					.setLatLng(e.latlng)
 					L.marker(e.latlng).addTo(map)
-					.bindPopup("<form id=payment><fieldset><ol><li><label for=name></label><input id=name name=name type=text placeholder='To?' required autofocus></li><li><label for=name></label><input id=name name=name type=text placeholder='From?' required autofocus></li><li><label for=phone></label><input id=phone name=phone type=tel placeholder='Phone #? Eg. 447500000000' required></li><li><label for=notes>Notes</label><textarea id=notes name=notes rows=2 required>" + e.latlng.toString() + "</textarea></li></ol></fieldset><fieldset><button type=submit  ACTION = 'assets/text/sms.php'>Send!</button></fieldset></form>").openPopup()				
-					.openOn(map);
-
+					.bindPopup("<form method='post' id=payment action='assets/text/sms.php'><fieldset><ol><li><label for=name></label><input id=name name=to type=text placeholder='To?' required autofocus></li><li><label for=name></label><input id=name name=from type=text placeholder='From?' required autofocus></li><li><label for=phone></label><input id=phone name=phone type=tel placeholder='Their Phone #?' required></li><li id=location><textarea id=location name=location rows=2 required>" + latlngStr + "</textarea></li><li><textarea id=notes name=notes rows=2 required>Lets meet here!</textarea></li></ol></fieldset><fieldset><button type=submit id=submit>Send!</button></fieldset></form>").openPopup()
 				}
 
 		map.on('click', onMapClick);
-
-
-		map.addControl(fullScreen);
 		map.addControl(bingGeocoder);
 		}
 
 window.onload = runMap;   
+	
