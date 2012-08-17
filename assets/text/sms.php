@@ -50,7 +50,7 @@
             $phone,
  
             // the sms body
-            "Hey $to it's $from. $notes http://maps.google.com/maps?ll=$location"
+            "Hey $to it's $from. $notes http://maps.google.com/maps?q=$location&sll=$location"
         );
  
         // Display a confirmation message on the screen

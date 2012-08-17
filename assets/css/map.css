@@ -168,7 +168,56 @@ body {
 				  display: none !important;
 				}
 
-				.geolocation {
+		#geolocate {
+		position: absolute;
+		left: 0px;
+		top: 10px;
+		margin-left: 10px;
+		margin-top: 55px;
+		padding: 5px;
+		background: rgba(0, 0, 0, 0.25);
+		border-radius: 7px;
+		-moz-border-radius: 7px;
+		-webkit-border-radius: 7px;
+		color: rgba(255, 255, 255, 1);
+		z-index: 100;
+		}
+      #geolocate a {
+        background-color: rgba(255, 255, 255, 0.75);
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        background-image: url(location.png);
+        display: block;
+        -moz-border-radius: 4px;
+        -webkit-border-radius: 4px;
+        border-radius: 4px;
+        width: 19px;
+        height: 19px;
+      }
+      #geolocate a:hover {
+        background-color: #fff;
+      }
+      #geolocate img{
+      	position: relative !important;
+		left: 2px !important;
+		top: 2px !important;
+      }
+      header{
+      	z-index: 1001;
+      	position: absolute;
+      	left: 50px;
+      	top: 10px;
+      	font-family: helvetica;
+      	font-size: 20px;
+      }
+@media (max-device-width: 769px) {
+	#header {
+	display: none; 
+	}
+	#social {
+	display:none;
+	}
+	.geolocation {
         position: absolute;
         right: 20px;
         top: 0;
@@ -202,3 +251,10 @@ body {
 		left: 2px !important;
 		top: 2px !important;
       }
+
+.leaflet-control-geocoder-form{
+	display: none !important;
+}
+
+}
+

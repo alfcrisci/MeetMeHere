@@ -35,4 +35,5 @@
 
 .leaflet-control-geocoder-expanded .leaflet-control-geocoder-form {
 	padding: 5px;
+	height:20px;
 }
